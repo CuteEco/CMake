@@ -18,6 +18,7 @@ You have to set 3 variables to use this repository:
 set(${CMAKE_PROJECT_NAME}_include_dir code/include)
 set(${CMAKE_PROJECT_NAME}_source_dir code/source)
 set(${CMAKE_PROJECT_NAME}_test_dir test)
+set(${CMAKE_PROJECT_NAME}_docs_source_dir docs)
 ```
 
 Of course, you can use any path for every variable, but those variables have to be

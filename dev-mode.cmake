@@ -32,10 +32,6 @@ if(ENABLE_COVERAGE)
 	include(CMake/coverage.cmake)
 endif()
 
-if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Windows")
-	include(CMake/open-cpp-coverage.cmake OPTIONAL)
-endif()
-
 include(CMake/lint-targets.cmake)
 include(CMake/spell-targets.cmake)
 
