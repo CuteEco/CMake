@@ -10,6 +10,18 @@
 
 </div>
 
+## Attention:
+
+You have to set 3 variables to use this repository:
+
+```cmake
+set(${CMAKE_PROJECT_NAME}_include_dir code/include)
+set(${CMAKE_PROJECT_NAME}_source_dir code/source)
+set(${CMAKE_PROJECT_NAME}_test_dir test)
+```
+
+Of course, you can use any path for every variable, but those variables have to be
+
 ## Development:
 
 You can use your own scripts by placing them in the `custom/` directory or using this template for
