@@ -25,10 +25,9 @@ set(DOXYGEN_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/docs"
 )
 
 set(working_dir "${PROJECT_BINARY_DIR}/docs")
-option(docs_source_dir "Documents sources" docs)
 
 foreach(file IN ITEMS Doxyfile conf.py)
-	configure_file("${docs_source_dir}/${file}.in" "${working_dir}/${file}" @ONLY)
+	configure_file("${${CMAKE_PROJECT_NAME}_docs_source_dir}/${file}.in" "${working_dir}/${file}" @ONLY)
 endforeach()
 
 set(mcss_script "${mcss_SOURCE_DIR}/documentation/doxygen.py")
