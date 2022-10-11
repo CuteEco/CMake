@@ -26,9 +26,9 @@ endfunction()
 
 macro(fetch_from_git name gituser version)
 	include(FetchContent)
-	message(STATUS "Fetching ${name} ${version} from https://github.com/${gitrepo}/${name}.git")
+	message(STATUS "Fetching ${name} ${version} from https://github.com/${gituser}/${name}.git")
 	FetchContent_Declare(${name}
-		GIT_REPOSITORY https://github.com/${gitrepo}/${name}.git
+		GIT_REPOSITORY https://github.com/${gituser}/${name}.git
 		GIT_TAG ${version}
 	)
 	FetchContent_MakeAvailable(${name})
