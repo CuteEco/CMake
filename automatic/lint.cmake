@@ -6,12 +6,21 @@ macro(default name)
 	endif()
 endmacro()
 
-option(include_dir "Includes directory" code/include)
-option(source_dir "Sources directory" code/source)
-option(test_dir "Test directory" test)
+option(INCLUDE_DIR "Includes directory" code/include)
+option(SOURCE_DIR "Sources directory" code/source)
+option(TEST_DIR "Test directory" test)
 
 default(FORMAT_COMMAND clang-format)
-default(PATTERNS ${source_dir}/*.cpp ${source_dir}/*.hpp ${include_dir}/*.hpp ${test_dir}/*.cpp ${test_dir}*.hpp)
+default(PATTERNS
+	${SOURCE_DIR}/*.cpp
+	${SOURCE_DIR}/*.hpp
+	${SOURCE_DIR}/*.h
+	${INCLUDE_DIR}/*.hpp
+	${INCLUDE_DIR}/*.h
+	${TEST_DIR}/*.cpp
+	${TEST_DIR}/*.hpp
+	${TEST_DIR}/*.h
+)
 default(FIX NO)
 
 set(flag --output-replacements-xml)
