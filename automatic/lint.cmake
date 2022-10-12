@@ -47,7 +47,7 @@ foreach(file IN LISTS files)
 	)
 
 	if(NOT result EQUAL "0")
-		message(FATAL_ERROR "'${file}': formatter returned with ${result}")
+		message(FATAL_ERROR "'${file}': formatter returned with: '${result}'")
 	endif()
 
 	if(NOT FIX AND output MATCHES "\n<replacement offset")
