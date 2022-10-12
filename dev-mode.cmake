@@ -16,6 +16,8 @@ include(CMake/folders.cmake)
 
 include(CTest)
 
+set(autodir CMake/automatic)
+
 if(BUILD_TESTING)
 	add_subdirectory(${${CMAKE_PROJECT_NAME}_test_dir})
 endif()
@@ -23,17 +25,17 @@ endif()
 option(BUILD_MCSS_DOCS "Build documentation using Doxygen and m.css" OFF)
 
 if(BUILD_MCSS_DOCS)
-	include(CMake/docs.cmake)
+	include(${autodir}/docs.cmake)
 endif()
 
 option(ENABLE_COVERAGE "Enable coverage support separate from CTest's" OFF)
 
 if(ENABLE_COVERAGE)
-	include(CMake/coverage.cmake)
+	include(${autodir}/coverage.cmake)
 endif()
 
-include(CMake/automatic/lint-targets.cmake)
-include(CMake/automatic/spell-targets.cmake)
+include(${autodir}/lint-targets.cmake)
+include(${autodir}/spell-targets.cmake)
 
 add_folders(Project)
 
