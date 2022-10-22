@@ -1,6 +1,6 @@
 # This function collects the directories in dir_path
 function(load_directories_list dir_path result)
-	file(GLOB_RECURSE headers_list ${dir_path}/*.h)
+	file(GLOB_RECURSE headers_list ${dir_path}/*.h ${dir_path}/*.hpp)
 	set(dir_list "")
 
 	foreach(file_path ${headers_list})
